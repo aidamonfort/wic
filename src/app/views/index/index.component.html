@@ -1,0 +1,301 @@
+<app-index-navbar></app-index-navbar>
+<section #home class="header relative pt-16 items-center flex h-screen max-h-860-px">
+  <div class="container mx-auto items-center flex flex-wrap">
+    <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
+      <div class="pt-32 sm:pt-0">
+        <h2 class="font-semibold text-4xl text-blueGray-600">
+          Women in Copernicus
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
+          Copernicus Women wants to identify, highlight, understand and gather the stories of Copernicus Women in
+          European
+          Regions.
+        </p>
+        <div class="mt-12">
+          <a [routerLink]="['/resources']"
+            class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 wic-yellow active:wic-orange uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+            Check Resources
+          </a>
+          <a [routerLink]="['/aboutus']"
+            class="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 wic-yellow active:wic-orange uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+            Who are we?
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img class="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860-px"
+    src="assets/img/wic/home-banner-bg.png" alt="..." />
+</section>
+
+<section class="mt-48 md:mt-40 pb-40 relative bg-blueGray-100">
+  <div class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20" style="transform: translateZ(0)">
+    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+      version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+      <polygon class="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+
+  <div *ngIf="wp.events && wp.events.length > 0" class="container mx-auto">
+    <div class="flex flex-wrap items-center">
+      <!--       <div class="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-red-600">
+          <img alt="..."
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
+            class="w-full align-middle rounded-t-lg" />
+          <blockquote class="relative p-8 mb-4">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+              class="absolute left-0 w-full block h-95-px -top-94-px">
+              <polygon points="-30,95 583,95 583,65" class="wic-orange fill-current"></polygon>
+            </svg>
+            <h4 class="text-xl font-bold text-white">
+              News summary
+            </h4>
+            <p class="text-md font-light mt-2 text-white">
+              Putting together a page has never been easier than matching
+              together pre-made components. From landing pages presentation to
+              login areas, you can easily customise and built your pages.
+            </p>
+          </blockquote>
+        </div>
+      </div> -->
+
+      <!-- 
+
+      <div class="row" *ngIf="wp.events && wp.events.length > 0">
+        <div class="col-md-4" *ngFor="let f of wp.events.slice(0,3)">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img *ngIf="f._embedded && f._embedded['wp:featuredmedia']" class="img-center img-fluid"
+                [src]="f._embedded['wp:featuredmedia']['0'].source_url" alt="{{f.title.rendered}}" />
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h4 class="text-uppercase" [innerHTML]="f.title.rendered"></h4>
+                  <span> {{f.date | date}} </span>
+                  <hr class="line-primary" />
+                  <p [innerHTML]="f.excerpt.rendered"></p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-primary btn-simple" routerLink="/detail/{{f.slug}}" i18n="about|read more button">Read
+                more</button>
+      
+            </div>
+          </div>
+          <div class="d-sm-block d-md-none">
+            <br><br><br>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-simple" routerLink="/events">Read more</button>
+      </div>
+ -->
+
+      <div *ngFor="let f of wp.events.slice(0,3)"
+        class="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg wic-orange">
+          <img *ngIf="f._embedded && f._embedded['wp:featuredmedia']"
+            [src]="f._embedded['wp:featuredmedia']['0'].source_url" alt="{{f.title.rendered}}"
+            class="w-full align-middle rounded-t-lg" />
+          <blockquote class="relative p-8 mb-4">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
+              class="absolute left-0 w-full block h-95-px -top-94-px">
+            </svg>
+            <h4 class="text-xl font-bold text-white" [innerHTML]="f.title.rendered"></h4>
+            <small class="font-normal leading-normal mt-0 mb-4 text-white">
+              {{f.date | date}}
+            </small>
+            <p class="text-md font-light mt-2 text-white" [innerHTML]="f.excerpt.rendered">
+            </p>
+            <a routerLink="/news/{{f.slug}}"
+              class="wic-text-blue2 background-transparent font-bold uppercase px-3 py-1 text-xs outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+              <i class="fas fa-glasses"></i> Read More
+            </a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+
+    <!--    <div class="w-full md:w-6/12 px-4">
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-6/12 px-4">
+            <div class="relative flex flex-col mt-4">
+              <div class="px-4 py-5 flex-auto">
+                <div
+                  class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"
+                >
+                  <i class="fas fa-sitemap"></i>
+                </div>
+                <h6 class="text-xl mb-1 font-semibold">CSS Components</h6>
+                <p class="mb-4 text-blueGray-500">
+                  Notus Angular comes with a huge number of Fully Coded CSS
+                  components.
+                </p>
+              </div>
+            </div>
+            <div class="relative flex flex-col min-w-0">
+              <div class="px-4 py-5 flex-auto">
+                <div
+                  class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"
+                >
+                  <i class="fas fa-drafting-compass"></i>
+                </div>
+                <h6 class="text-xl mb-1 font-semibold">
+                  JavaScript Components
+                </h6>
+                <p class="mb-4 text-blueGray-500">
+                  We also feature many dynamic components for React, NextJS, Vue
+                  and Angular.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-6/12 px-4">
+            <div class="relative flex flex-col min-w-0 mt-4">
+              <div class="px-4 py-5 flex-auto">
+                <div
+                  class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"
+                >
+                  <i class="fas fa-newspaper"></i>
+                </div>
+                <h6 class="text-xl mb-1 font-semibold">Pages</h6>
+                <p class="mb-4 text-blueGray-500">
+                  This extension also comes with 3 sample pages. They are fully
+                  coded so you can start working instantly.
+                </p>
+              </div>
+            </div>
+            <div class="relative flex flex-col min-w-0">
+              <div class="px-4 py-5 flex-auto">
+                <div
+                  class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white"
+                >
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h6 class="text-xl mb-1 font-semibold">Documentation</h6>
+                <p class="mb-4 text-blueGray-500">
+                  Built by developers for developers. You will love how easy is
+                  to to work with Notus Angular.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+  </div>
+
+  <div class="justify-center text-center flex flex-wrap mt-24">
+    <div class="my-4 w-full lg:w-3/12 px-4">
+      <img alt="Women in Copernicus" class="shadow-md rounded-full max-w-full w-18 mx-auto p-2 bg-white my-6"
+        src="assets/img/wic/w1.png" />
+      <img alt="Women in Copernicus" class="shadow-md rounded-full max-w-full w-18 mx-auto p-2 bg-white my-6"
+        src="assets/img/wic/w2.png" />
+    </div>
+
+    <div class="w-full md:w-6/12 px-12 md:px-4">
+      <h2 class="font-semibold text-4xl">Why Women in Copernicus?</h2>
+      <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-500">
+        Women are part of the Copernicus experience. They are not always visible but they are present in the production
+        flow of
+        the Copernicus / Earth Observation / Geoinformation (Copernicus/EO/GI) domains. The professions related to
+        Copernicus/EO/GI domains are very varied: physicist, geographer, computer scientist, environmentalist,
+        geomatician,
+        oceanographer, urban planner; as a researcher, a civil servant, a consultant, an entrepreneur, etc. Women still
+        occupy
+        few of these positions with a strong technical component.
+        The "Women in Copernicus" projects wants to give a voice and a face to the women who work with Copernicus,
+        wether they
+        are experts in the analysis of satellite data or users of Copernicus services in various fields of application.
+        The
+        project aims to identify opportunities and obstacles in the paths of these women, and also to inspire girls and
+        women by
+        bringing Women in Copernicus to the forefront of Copernicus.
+      </p>
+    </div>
+    <div class="my-4 w-full lg:w-3/12 px-4">
+      <img alt="Women in Copernicus" class="shadow-md rounded-full max-w-full w-18 mx-auto p-2 bg-white my-6"
+        src="assets/img/wic/w4r.png" />
+      <img alt="Women in Copernicus" class="shadow-md rounded-full max-w-full w-18 mx-auto p-2 bg-white my-6"
+        src="assets/img/wic/w3r.png" />
+    </div>
+  </div>
+</section>
+
+<!-- <section class="py-20 bg-blueGray-600 overflow-hidden">
+  <div class="container mx-auto pb-64">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
+        <div
+          class="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
+          <i class="fas fa-code-branch text-xl"></i>
+        </div>
+        <h3 class="text-3xl mb-2 font-semibold leading-normal text-white">
+          Open Source
+        </h3>
+        <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-400">
+          Since
+          <a href="https://tailwindcss.com/?ref=creativetim" class="text-blueGray-300" target="_blank">
+            Tailwind CSS
+          </a>
+          is an open source project we wanted to continue this movement too. You
+          can give this version a try to feel the design and also test the
+          quality of the code!
+        </p>
+        <p class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-400">
+          Get it free on Github and please help us spread the news with a Star!
+        </p>
+        <a href="https://github.com/creativetimofficial/notus-angular?ref=creativetim" target="_blank"
+          class="github-star mt-4 inline-block text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+          Github Star
+        </a>
+      </div>
+
+      <div class="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
+        <i class="fab fa-github text-blueGray-700 text-55 absolute -top-150-px -right-100 left-auto opacity-80"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pb-16 bg-blueGray-200 relative pt-32">
+  <div class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20" style="transform: translateZ(0)">
+    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+      version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+      <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+
+  <div class="container mx-auto">
+    <div class="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16 px-12 relative z-10">
+      <div class="w-full text-center lg:w-8/12">
+        <p class="text-4xl text-center">
+          <span role="img" aria-label="love"> 😍 </span>
+        </p>
+        <h3 class="font-semibold text-3xl">Do you love this Starter Kit?</h3>
+        <p class="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
+          Cause if you do, it can be yours now. Hit the buttons below to
+          navigate to get the Free version for your next project. Build a new
+          web app or give an old project a new look!
+        </p>
+        <div class="sm:block flex flex-col mt-10">
+          <a href="https://www.creative-tim.com/learning-lab/tailwind/angular/overview/notus?ref=na-index-page"
+            target="_blank"
+            class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-red-600 active:bg-red-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+            Get started
+          </a>
+          <a href="https://github.com/creativetimofficial/notus-angular?ref=creativetim" target="_blank"
+            class="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
+            <i class="fab fa-github text-lg mr-1"></i>
+            <span>Help With a Star</span>
+          </a>
+        </div>
+        <div class="text-center mt-16"></div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<app-footer></app-footer>
