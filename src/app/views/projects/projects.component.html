@@ -9,16 +9,25 @@
             <polygon class="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
         </svg>
     </div>
-    <div class="container mx-auto px-4 pb-32">
+    <div class="container mx-auto px-4">
         <div class="text-center mt-12">
             <h3 class="text-4xl font-semibold leading-normal mb-8 text-blueGray-700 mb-2">
                 WiC is involved in the following initiatives
             </h3>
 
             <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-wic-blue2">
-            Copernicus Women will identify, inventory, understand and gather the stories of Copernicus Women in European Regions.
+                Copernicus Women will identify, inventory, understand and gather the stories of Copernicus Women in
+                European Regions.
             </p>
-        </div>
+
+           <div style="position: relative; padding-bottom: 56.25%; height: 0;"> 
+                <iframe style="position: absolute; top:0; left:0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/bpvUaNzZuD0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div> 
+
     </div>
 
 </section>
@@ -45,7 +54,7 @@
                     "Results of the
                     survey, Executive summary, November 2020" and in the result section below.
                 </p>
-<!--                 <a href="https://womenincopernicus.eu" target="_blank"
+                <!--                 <a href="https://womenincopernicus.eu" target="_blank"
                     class="github-star mt-4 inline-block text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 wic-blue1  active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
                     Visit Project Webpage
                 </a> -->
@@ -110,7 +119,7 @@
                     </div>
                 </div>
 
-  <!--               <div class="sm:block flex flex-col mt-10">
+                <!--               <div class="sm:block flex flex-col mt-10">
                     <a href="https://www.creative-tim.com/learning-lab/tailwind/angular/overview/notus?ref=na-index-page"
                         target="_blank"
                         class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-2 bg-red-600 active:bg-red-700 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150">
@@ -144,20 +153,26 @@
                 <div class="px-1">
                     <img alt="..." src="{{w.fields.downloadURL}}" class="shadow-lg rounded-md mx-auto max-w-100-px" />
                     <div class="mt-1  text-center">
-                        <a *ngIf="w.fields.twitter && w.fields.twitter != '' " href="{{w.fields.twitter}}" target="_blank" rel="noopener noreferrer">
-                            <button class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        <a *ngIf="w.fields.twitter && w.fields.twitter != '' " href="{{w.fields.twitter}}"
+                            target="_blank" rel="noopener noreferrer">
+                            <button
+                                class="bg-lightBlue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                                 type="button">
                                 <i class="fab fa-twitter"></i>
                             </button>
                         </a>
-                        <a *ngIf="w.fields.linkedin != '' " href="{{w.fields.linkedin}}" target="_blank" rel="noopener noreferrer">
-                            <button class="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        <a *ngIf="w.fields.linkedin != '' " href="{{w.fields.linkedin}}" target="_blank"
+                            rel="noopener noreferrer">
+                            <button
+                                class="bg-lightBlue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                                 type="button">
                                 <i class="fab fa-linkedin"></i>
                             </button>
                         </a>
-                        <a *ngIf="w.fields.other != '' " href="{{w.fields.other}}" target="_blank" rel="noopener noreferrer">
-                            <button class="wic-orange text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                        <a *ngIf="w.fields.other != '' " href="{{w.fields.other}}" target="_blank"
+                            rel="noopener noreferrer">
+                            <button
+                                class="wic-orange text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                                 type="button">
                                 <i class="fa fa-globe"></i>
                             </button>
