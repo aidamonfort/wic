@@ -472,10 +472,10 @@ h6 {
  * opt-out.
  */
 
-a {
-  color: inherit;
+ a {
+  /* color: inherit; */
   text-decoration: inherit;
-}
+} 
 
 /**
  * Reset form element properties that are easy to forget to
