@@ -30,13 +30,12 @@ export class IndexComponent implements OnInit {
     // Creamos la fecha a partir de la fecha en formato string AAAA-MM-dd HH:mm:ss
     this.finishDate = new Date(this.finishDateString);
 
-    this.start().subscribe(_ => console.log("tik"));
+    this.start().subscribe();
   }
 
   updateTime() {
     const now = new Date();
     const diff = this.finishDate.getTime() - now.getTime();
-    console.log(diff)
 
     // Cálculos para sacar lo que resta hasta ese tiempo objetivo / final
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
